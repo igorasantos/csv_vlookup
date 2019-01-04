@@ -46,3 +46,47 @@ In terminal, type the command:
 E.g.:
 
 ```python3 csv_match_files_keys.py source.csv lookup.csv output.csv```
+
+### Input the field indexes
+The script will ask you for the column field index of both files. Consider the first column as index=0.
+
+# A small example case
+Consider the source file called 'srcData.csv' with this content:
+```
+primaryKey,value
+air,aaa
+smell,bbb
+hand,ccc
+dude,ddd
+road,eee
+cat,fff
+```
+
+And the lookup file called 'lookupData.csv' with this content:
+```
+primaryKey,value1,value2
+air,col01,col02
+air,col11,col12
+smell,col21,col22
+hand,col61,col62
+dude,col31,col32
+road,col41,col42
+cat,col51,col52	
+mouse,col71,col72
+```
+
+Know see the script behavior typing on the terminal:
+
+```python3 cross_vlookup.py srcData.csv lookupData.csv outputData.csv```
+
+The outputData.csv will have this content at the end:
+```
+primaryKey,value1,value2
+air,col01,col02
+air,col11,col12
+smell,col21,col22
+hand,col61,col62
+dude,col31,col32
+road,col41,col42
+cat,col51,col52	
+```
