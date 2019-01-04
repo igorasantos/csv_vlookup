@@ -40,7 +40,7 @@ If you don't have the latest version of the [Numpy package](http://www.numpy.org
 ## How to run
 In terminal, type the command:
 
-```python3 csv_match_files_keys.py <sourceData.csv> <lookupData.csv> <outputData.csv>```
+```python3 csv_match_files_keys.py <sourceData.csv> <lookupData.csv> <newOutputDataFile.csv>```
 
 
 E.g.:
