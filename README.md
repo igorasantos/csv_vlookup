@@ -1,6 +1,8 @@
 # Aim
-Check the records (rows) of csv lookupData in which contains key contained in csv sourceData.
+Check the records (rows) of csv lookupData in which contains key contained in csv sourceData, generating an output (new) file at the end.
+
 *All the lines with same key in lookupData are captured, but the keys in sourceData must be unique.*
+
 
 # Setup requirements
 The following instructions might set up all of the development steps needed to use this script. The steps consider a Debian-like system.
@@ -8,20 +10,17 @@ The following instructions might set up all of the development steps needed to u
 ## Python
 If you do not have the latest version of Python:
 
-```$ sudo apt-get install python3```
-
+```$ sudo apt-get upgrade python3```
 
 ## Pip
 And if you don't have the latest version of the Python's package manager `(pip)`:
 
 ```$ python3 -m pip install --upgrade pip```
 
-
 ## Pandas
 If you don't have the latest version of the [Pandas library](https://pandas.pydata.org/):
 
 ```$ python3 -m pip install pandas```
-
 
 ## Numpy
 If you don't have the latest version of the [Numpy package](http://www.numpy.org/):
@@ -40,18 +39,19 @@ If you don't have the latest version of the [Numpy package](http://www.numpy.org
 ## How to run
 In terminal, type the command:
 
-```python3 csv_match_files_keys.py <sourceData.csv> <lookupData.csv> <newOutputDataFile.csv>```
-
+```python3 csv_vlookup.py <sourceData.csv> <lookupData.csv> <newOutputDataFile.csv>```
 
 E.g.:
 
-```python3 csv_match_files_keys.py source.csv lookup.csv output.csv```
+```python3 csv_match_files_keys.py source.csv lookup.csv newOutputFile.csv```
 
 ### Input the field indexes
 The script will ask you for the column field index of both files. Consider the first column as index=0.
 
-# A small example case
+
+# Small example case
 Consider the source file called 'srcData.csv' with this content:
+
 ```
 primaryKey,value
 air,aaa
@@ -77,9 +77,9 @@ mouse,col71,col72
 
 Know see the script behavior typing on the terminal:
 
-```python3 cross_vlookup.py srcData.csv lookupData.csv outputData.csv```
+```python3 cross_vlookup.py srcData.csv lookupData.csv newOutputDataFile.csv```
 
-The outputData.csv will have this content at the end:
+The newOutputDataFile.csv will have this content at the end:
 ```
 primaryKey,value1,value2
 air,col01,col02
@@ -90,3 +90,5 @@ dude,col31,col32
 road,col41,col42
 cat,col51,col52	
 ```
+
+Note that the register (row) `mouse,col71,col72` of `lookupData.csv` was not appended to the output, because its key `mouse` didn't exist in `srcData.csv`.
