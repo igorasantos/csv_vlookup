@@ -15,6 +15,7 @@
     * [Lookup data](#lookup-data)
     * [Run](#run)
     * [Output data](#output-data)
+    * [Conclusion](#conclusion)
 * **[Development](#development)**
   * [License](#license)
 ----
