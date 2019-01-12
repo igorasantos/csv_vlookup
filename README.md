@@ -17,15 +17,15 @@ And if you don't have the latest version of the Python's package manager `(pip)`
 
 ```$ python3 -m pip install --upgrade pip```
 
+## NumPy
+If you don't have the latest version of the [NumPy package](http://www.numpy.org/):
+
+```$ python3 -m pip install numpy```
+
 ## Pandas
 If you don't have the latest version of the [Pandas library](https://pandas.pydata.org/):
 
 ```$ python3 -m pip install pandas```
-
-## Numpy
-If you don't have the latest version of the [Numpy package](http://www.numpy.org/):
-
-```$ python3 -m pip install numpy```
 
 
 # Running
