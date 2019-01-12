@@ -1,3 +1,24 @@
+# Table of Contents
+
+* **[Aim](#aim)**
+* **[Setup requirements](#setup-requirements)**
+  * [Python](#python)
+  * [Pip](#pip)
+  * [NumPy](#numpy)
+  * [Pandas](#pandas)
+* **[Running](#running)**
+  * [Before...](#before)
+  * [How to run](#how-to-run)
+  * [Field indexes input](#field-indexes-input)
+* **[Small example case](#small-example-case)**
+    * [Source data](#source-data)
+    * [Lookup data](#lookup-data)
+    * [Run](#run)
+    * [Output data](#output-data)
+* **[Development](#development)**
+  * [License](#license)
+----
+
 # Aim
 Check the records (rows) of csv lookupData in which contains key contained in csv sourceData, generating an output (new) file at the end.
 
@@ -45,11 +66,12 @@ E.g.:
 
 ```python3 csv_match_files_keys.py source.csv lookup.csv newOutputFile.csv```
 
-### Input the field indexes
+### Field indexes input
 The script will ask you for the column field index of both files. Consider the first column as index=0.
 
 
 # Small example case
+## Source data
 Consider the source file called 'srcData.csv' with this content:
 
 ```
@@ -62,6 +84,7 @@ road,eee
 cat,fff
 ```
 
+## Lookup data
 And the lookup file called 'lookupData.csv' with this content:
 ```
 primaryKey,value1,value2
@@ -75,10 +98,12 @@ cat,col51,col52
 mouse,col71,col72
 ```
 
+## Run
 Know see the script behavior typing on the terminal:
 
 ```python3 cross_vlookup.py srcData.csv lookupData.csv newOutputDataFile.csv```
 
+## Output data
 The newOutputDataFile.csv will have this content at the end:
 ```
 primaryKey,value1,value2
@@ -91,4 +116,14 @@ road,col41,col42
 cat,col51,col52	
 ```
 
+## Conclusion
 Note that the register (row) `mouse,col71,col72` of `lookupData.csv` was not appended to the output, because its key `mouse` didn't exist in `srcData.csv`.
+
+
+# Development
+The csv_vlookup source code is [hosted on GitHub](https://github.com/igorasantos/csv_vlookup).
+
+Please feel free to submit [pull requests](https://github.com/igorasantos/csv_vlookup/pulls) and bugs on the [issue tracker](https://github.com/igorasantos/csv_vlookup/issues).
+
+## License
+[The MIT License](LICENSE)
